@@ -1,0 +1,13 @@
+<div>
+    <input nz-input (change)="inputEvent($event)"/>
+    <button nz-button (click)="filterData(myEvent)">Filter data</button>
+    <button nz-button (click)="sortData()">Sort data</button>
+</div>
+
+<div>
+  <app-game-card
+    *ngFor="let game of filteredGameList"
+    [game]="game"
+    (clickedMore)="navigateToGamePage(game)"
+  ></app-game-card>
+</div>
